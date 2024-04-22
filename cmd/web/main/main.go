@@ -1,7 +1,7 @@
 package main
 
 import (
-	"PhoneBook_AP/pkg/drivers"
+	"PhoneBook_AP/cmd/web/main/drivers"
 	"log"
 	"net/http"
 	"time"
