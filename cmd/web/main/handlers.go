@@ -34,7 +34,7 @@ type SchoolEntry struct {
 
 //---------------------------------------------------------------------------------
 
-var tmpl = template.Must(template.ParseGlob("ui/html/*.tmpl"))
+var tmpl = template.Must(template.ParseGlob("./ui/html/*.tmpl"))
 
 func application(w http.ResponseWriter, r *http.Request) {
 	tmpl.ExecuteTemplate(w, "main-page.tmpl", nil)
