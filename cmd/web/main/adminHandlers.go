@@ -1,3 +1,5 @@
+//cmd/web/main/adminHandlers.go
+
 package main
 
 import (

@@ -1,3 +1,5 @@
+//pkg/models/users.go
+
 package models
 
 import (

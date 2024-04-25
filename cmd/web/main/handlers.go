@@ -1,3 +1,5 @@
+//cmd/web/main/handlers.go
+
 package main
 
 import (
