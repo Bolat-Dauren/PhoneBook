@@ -34,7 +34,7 @@ type SchoolEntry struct {
 	Address string `json:"address"`
 }
 
-//---------------------------------------------------------------------------------
+//Schools-------------------------------------------------------------------------------------------
 
 var tmpl = template.Must(template.ParseGlob("./ui/html/*.tmpl"))
 
@@ -97,7 +97,7 @@ func searchSchoolsHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl.ExecuteTemplate(w, "schools-result.tmpl", PhonebookData{City: city, Schools: results})
 }
 
-//Hospitals--------------------------------------------------------------------------
+//Hospitals-----------------------------------------------------------------------------------------------
 
 func searchHospitalsPageHandler(w http.ResponseWriter, r *http.Request) {
 	city := r.URL.Path[len("/city/hospitals/"):]
@@ -149,7 +149,7 @@ func searchHospitalsHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl.ExecuteTemplate(w, "hospitals-result.tmpl", PhonebookData{City: city, Hospitals: results})
 }
 
-//----------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------
 
 func searchPageHandler(w http.ResponseWriter, r *http.Request) {
 	city := r.URL.Path[len("/city/"):]
