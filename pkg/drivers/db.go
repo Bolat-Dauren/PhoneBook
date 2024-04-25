@@ -11,7 +11,7 @@ import (
 
 var DB *sql.DB
 
-func InitDB(connString string) {
+func InitDB(connString string) error {
 	var err error
 	DB, err = sql.Open("postgres", connString)
 	if err != nil {
@@ -23,4 +23,5 @@ func InitDB(connString string) {
 	}
 
 	log.Println("Connected to the database")
+	return nil
 }
