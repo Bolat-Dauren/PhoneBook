@@ -58,9 +58,7 @@ func rateLimitMiddleware(next http.Handler) http.Handler {
 }
 
 func init() {
-	// Определение пути к файлу лога
 	logFilePath := "logs/application.log"
-	// Создание каталога для хранения логов, если он не существует
 	logDir := filepath.Dir(logFilePath)
 	if _, err := os.Stat(logDir); os.IsNotExist(err) {
 		err := os.MkdirAll(logDir, 0755)
@@ -68,12 +66,10 @@ func init() {
 			panic(err)
 		}
 	}
-	// Открытие файла лога для записи
 	logFile, err := os.OpenFile(logFilePath, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 	if err != nil {
 		panic(err)
 	}
-	// Настройка форматтера и вывода логов в файл
 	log.SetFormatter(&logrus.JSONFormatter{})
 	log.SetOutput(logFile)
 }
